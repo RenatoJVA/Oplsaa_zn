@@ -6,12 +6,18 @@ prot=$(basename "$protein" .pdb)  # Obtener el nombre de la proteína sin la ext
 forcefield="oplsaa_zn.ff"  # Campo de fuerza
 solvate=true  # Opción para solvatar el sistema
 ions=true     # Opción para añadir iones
-toppar_dir="Metalloprotein/toppar_dir"  # Directorio para los archivos .itp
+toppar="Metalloprotein/toppar"  # Directorio para los archivos .itp
 input_dir="Metalloprotein/protein"  # Directorio donde se encuentra el archivo .pdb
 mdp_dir="Metalloprotein/mdp"  # Directorio donde se encuentran los archivos .mdp
 
-# Crear el directorio toppar_dir si no existe
-mkdir -p "$toppar_dir"
+# Crear el directorio toppar si no existe
+mkdir -p "$toppar"
+
+# Verificar si el archivo .pdb existe
+if [ ! -f "$input_dir/$protein" ]; then
+  echo "Error: No se encontró el archivo $input_dir/$protein"
+  exit 1
+fi
 
 # Copiar el archivo PDB al directorio actual y crear una copia
 cp "$input_dir/$protein" .  # Copia el archivo PDB a la ubicación actual
@@ -20,15 +26,15 @@ cp "$protein" "${prot}_B.pdb"  # Crear una copia del archivo
 # Crear archivo .gro a partir del archivo .pdb
 gmx editconf -f "$protein" -o "$prot.gro" -resnr 1 -c -bt cubic -d 1
 
-# Generar topología, incluir campo de fuerza local y guardar .itp en toppar_dir
-gmx pdb2gmx -f "$prot.gro" -o "$prot.gro" -p "$prot.top" -i "$toppar_dir/$prot.itp" -ff "$forcefield" -his -water tip3p
+# Generar topología, incluir campo de fuerza local y guardar .itp en toppar
+gmx pdb2gmx -f "$prot.gro" -o "$prot.gro" -p "$prot.top" -i "$toppar/$prot.itp" -ff "$forcefield" -his -water tip3p
 
 # Incluir archivos .itp adicionales en el archivo .top
 {
-  echo "#include \"$toppar_dir/tip3p.itp\""
-  echo "#include \"$toppar_dir/ions.itp\""
-  echo "#include \"$toppar_dir/zinc.itp\""  # Incluir Zn
-  echo "#include \"$toppar_dir/oxt.itp\""    # Incluir OXT
+  echo "#include \"$toppar/tip3p.itp\""
+  echo "#include \"$toppar/ions.itp\""
+  echo "#include \"$toppar/zinc.itp\""  # Incluir Zn
+  echo "#include \"$toppar/oxt.itp\""    # Incluir OXT
 } >> "$prot.top"
 
 # Solvatar el sistema si es necesario
@@ -49,8 +55,8 @@ fi
 # Ejecutar la minimización de energía
 gmx mdrun -v -s "$prot-min.tpr" -deffnm "$prot-min"
 
-# Copiar los archivos .itp relevantes al directorio toppar_dir (esto es opcional si ya están ahí)
-cp "Metalloprotein/oplsaa_zn.ff/"*.itp "$toppar_dir/"
+# Copiar los archivos .itp relevantes al directorio toppar (esto es opcional si ya están ahí)
+cp "Metalloprotein/oplsaa_zn.ff/"*.itp "$toppar/"
 
 ############################################
 # Simulación NVT
