@@ -250,6 +250,7 @@
  opls_234   12.01100  ; C: C=O in benzamide
  opls_235   12.01100  ; C=O in amide, dmf, peptide bond
  opls_236   15.99940  ; O: C=O in amide.   Acyl R on C in amide is neutral - 
+ opls_236   15.9994   ; Tipo de átomo para OXT (oxígeno carboxílico)
  opls_237   14.00670  ; N: primary amide.  use alkane parameters.
  opls_238   14.00670  ; N: secondary amide, peptide bond (see #279 for formyl H)
  opls_239   14.00670  ; N: tertiary amide

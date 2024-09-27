@@ -302,6 +302,7 @@
   C     CW      1    0.14900   334720.0   ;
   C_2   CW      1    0.14900   334720.0   ;
   C_3   CW      1    0.14900   334720.0   ;
+  opls_235  opls_236  1   0.1230  502080.0  ; C=OXT enlace
 
 [ constrainttypes ]
 ; this section is implemented manually from bond & angle values
@@ -1300,6 +1301,8 @@
   S      CA     CA      1   119.400    711.280   ; thioanisole             copy from SY-CA-CA      rcr HIVRT
   P      CA     CA      1   119.400    711.280   ; 
   CA     S      CT      1   104.200    518.816   ; thioanisole             adjusted from CT-S-CT  rcr HIVRT
+  opls_238  opls_235  opls_236  1   120.00  418.4  ; N-C-OXT ángulo
+
  
 ; Charged Glutamine
 ; See. Patriksson et al. Int. J. Mass. Spectrom. 248 pp 124-135 (2006)

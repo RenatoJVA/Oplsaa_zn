@@ -713,6 +713,7 @@
    HA2    opls_140    0.060     1
      C    opls_235    0.500     2
      O    opls_236   -0.500     2
+   OXT    opls_236   -0.500     2
  [ bonds ]
      N     H
      N    CA
@@ -721,6 +722,7 @@
     CA     C
      C     O
     -C     N
+    C    OXT
  [ impropers ]
     -C    CA     N     H    improper_Z_N_X_Y
     CA    +N     C     O    improper_O_C_X_Y
