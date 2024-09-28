@@ -1245,6 +1245,7 @@
   HG23    opls_140    0.060     3
      C    opls_235    0.500     4
      O    opls_236   -0.500     4
+   OXT    opls_236   -0.500     4
  [ bonds ]
      N     H
      N    CA
@@ -1259,6 +1260,7 @@
    CG2  HG22
    CG2  HG23
      C     O
+     C   OXT
     -C     N
  [ dihedrals ] ; override some of the typebased dihedrals
      N    CA    CB   OG1    dih_SER_THR_chi1_N_C_C_O
