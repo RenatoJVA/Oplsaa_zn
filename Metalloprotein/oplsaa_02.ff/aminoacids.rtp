@@ -1245,7 +1245,6 @@
   HG23    opls_140    0.060     3
      C    opls_235    0.500     4
      O    opls_236   -0.500     4
-   OXT    opls_236   -0.500     ; OXT para el extremo C-terminal
  [ bonds ]
      N     H
      N    CA
