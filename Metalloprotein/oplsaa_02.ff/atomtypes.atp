@@ -429,6 +429,7 @@
  opls_410  132.90540  ; Cs+
  opls_411   24.30500  ; Mg++
  opls_412   40.08000  ; Ca++
+ opls_412b  65.38000  ; Zn++
  opls_413   87.62000  ; Sr++
  opls_414  137.33000  ; Ba++
  opls_415   12.01100  ; C  in  CH3S-  thiolate

@@ -598,6 +598,7 @@
    HA2    opls_140    0.060     1
      C    opls_235    0.500     2
      O    opls_236   -0.500     2
+   OXT    opls_236b   -0.500     3 ; OXT para el extremo C-terminal
  [ bonds ]
      N     H
      N    CA
@@ -630,6 +631,7 @@
    NE2    opls_511   -0.490     7
      C    opls_235    0.500     8
      O    opls_236   -0.500     8
+   OXT    opls_236b   -0.500     9 ; OXT para el extremo C-terminal
  [ bonds ]
      N     H
      N    CA
@@ -681,6 +683,7 @@
    HE2    opls_504    0.420     6
      C    opls_235    0.500     7
      O    opls_236   -0.500     7
+   OXT    opls_236b   -0.500     8; OXT para el extremo C-terminal
  [ bonds ]
      N     H
      N    CA
@@ -733,6 +736,7 @@
    HE2    opls_513    0.460     7
      C    opls_235    0.500     8
      O    opls_236   -0.500     8
+   OXT    opls_236b   -0.500     9 ; OXT para el extremo C-terminal
  [ bonds ]
      N     H
      N    CA
@@ -819,7 +823,7 @@
    HD2    opls_140    0.060     5
    HD3    opls_140    0.060     5
      C    opls_235    0.500     6
-     O    opls_236   -0.500     6
+     O    opls_236b   -0.500     6
  [ bonds ]
      N     H
      N    CA
@@ -1241,6 +1245,7 @@
   HG23    opls_140    0.060     3
      C    opls_235    0.500     4
      O    opls_236   -0.500     4
+   OXT    opls_236b   -0.500     ; OXT para el extremo C-terminal
  [ bonds ]
      N     H
      N    CA
@@ -1536,3 +1541,6 @@ HD23    opls_140     0.060      1
     CD2    HD22
     CD2    HD23
 
+[ ZN ]
+[ atoms ]
+   ZN   opls_412b   2.000     0.000   ; Zinc ion with charge +2

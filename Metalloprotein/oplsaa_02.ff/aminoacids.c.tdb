@@ -98,3 +98,7 @@ OXT	OT	opls_269	15.9994	-0.44
 [ impropers ]
 CA	OT	C	O	improper_O_C_X_Y
 
+[ CTER ] ; Terminación C-terminal
+[ Add ]
+  OXT  opls_236b   -0.500  ; Tipo de átomo y carga para el oxígeno terminal (OXT)
+

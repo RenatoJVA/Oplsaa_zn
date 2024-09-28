@@ -89,3 +89,13 @@ I           1
 [ atoms ]
 ; id    at type     res nr  residu name at name  cg nr  charge   mass
 1       opls_403    1       I           I        1      -1       126.9045
+
+; Zinc ion (Zn2+) .itp file for GROMACS using OPLS-AA force field
+
+[ moleculetype ]
+; molname   nrexcl
+  ZN          1
+
+[ atoms ]
+; id    at type     res nr  residu name   at name   cg nr  charge   mass
+   1       opls_412b   1       ZN          ZN       1      2.0      65.38000
