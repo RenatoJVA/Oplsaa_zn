@@ -1,0 +1,13 @@
+; Zinc ion (ZN) .itp file for GROMACS using OPLS-AA force field
+
+[ atomtypes ]
+; name  at.num  mass     charge   ptype     sigma      epsilon
+  ZN      30    65.38     2.0     A        0.21000    2.50000   ; OPLS parameters for Zinc (Zn2+)
+
+[ moleculetype ]
+; molname    nrexcl
+  ZN         1
+
+[ atoms ]
+;   nr  type   resnr  residue  atom   cgnr    charge    mass
+     1   ZN     1      ZN      ZN      1       2.0     65.38
